@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<div ng-app="myApp" ng-init="quantity=1;cost=5">
+<div ng-app="myApp" ng-init="quantity=1;cost=5" ng-controller="OneCtrl">
     <p>名字 : <input type="text" ng-model="name"></p>
     <h1>Hello {{name}}</h1>
     <p >{{5+5}}</p>
@@ -15,10 +15,24 @@
     <runoob-directive></runoob-directive>
     <show-list></show-list>
     <div show-list=""></div>
+
+    <input type="file" file-read="" fileread="vm.fileread" fileurl="vm.FileUrl"/>
+
+    <p>
+        <span ng-bind="vm.fileread.name"></span>
+        <span ng-bind="vm.FileUrl"></span>
+    </p>
+
+    <!--<img ng-src="{{vm.FileUrl}}" alt="previewImage"/>-->
+
+    <button ng-click="printFile()">print file value</button>
 </div>
 
 
 <script src="js/app.js"></script>
 <script src="js/directives/directives.js"></script>
+<script src="js/ctrls/OneCtrl.js"></script>
+<script src="js/GetInputFileUrl.js"></script>
+
 </body>
 </html>
